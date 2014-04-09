@@ -1,0 +1,39 @@
+/* Flash */
+.flash {
+	position:fixed;
+	top: 0;
+	left: 50%;
+	margin-left: -200px;
+	font-family: "Arial", sans-serif;
+	font-size:12px;
+	width:400px;
+	background:white;
+	z-index:1001;
+	color:#22222;
+	border-radius:0px 0px 5px 5px;
+	border:1px solid #666;
+	background:#eee;
+	border-top:none;
+	padding: 5px;
+	text-align:center;
+}
+
+.error {
+	border-color:red;
+	background:#FFD1CD;
+}
+
+.notice {
+	border-color:#666;
+	background:#eee;
+}
+
+.success {
+	border-color:green;
+	background:#dcf7d4;
+}
+
+.close-flash-container {
+	float:right;
+	margin-right:5px;
+}

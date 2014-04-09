@@ -1,0 +1,104 @@
+/* SIGNED IN BAR */
+
+$signed-in-bar-height:34px;
+
+/* Colors */
+$signed-in-bar-background:black;
+
+$menu-color:white;
+$menu-highlight-color:white;
+$menu-highlight-background:#555;
+
+$separator-color:red;
+
+$submenu-background:#eee;
+$submenu-color:#111;
+$submenu-highlight-color:#eee;
+$submenu-highlight-background:#333;
+$submenu-border-color:#333;
+
+.signed-in-bar {
+	background:$signed-in-bar-background;
+	width:100%;
+	position:fixed;
+	padding:0px 0px;
+	z-index:1000;
+	height:$signed-in-bar-height;
+	font-family: "Arial", sans-serif;
+	font-size:12px;
+
+	.signed-in-bar-right {
+		float:right;
+		position:relative;
+
+		ul.signed-in-bar-menu {
+		  padding:0;
+		  list-style:none;
+		  margin:0;
+		  position:relative;
+
+		  /* SIGNED IN BAR LINKS */
+		  & > li {
+		    position:relative;
+		    float:right;
+
+		    a {
+		      display:inline-block;
+		      padding:10px;
+		      color:$menu-color; 
+		      text-decoration:none;
+		    }
+
+		    /* DISPLAY SUBMENUS TO THE RIGHT -9999px to HIDE */
+		    & > ul.submenu {
+		    	position:absolute;
+		    	right:-99999px;
+		    	border:1px solid $submenu-border-color;
+		      margin:0px;
+		      padding:0;  
+		      list-style:none;
+		      z-index:1000;
+
+		      /* SUBMENU LIST ITEMS */
+		      & > li {
+		        position:relative;
+		        float:none;
+
+		        & > a {
+		          background:$submenu-background;
+		          color:$submenu-color;
+		          margin:0px;
+		          width:150px;
+		          padding:10px 10px 10px 5px;
+		          text-align:right;
+		          
+		          &:hover {
+		            background:$submenu-highlight-background;
+		            color:$submenu-highlight-color;
+		          }
+		        }
+		      }
+
+		      li.separator {
+		        height:0;
+		        border-top:1px solid $separator-color;
+		      }
+		    }
+
+		    /* HOVER TO REVEAL SUBMENU */
+		    &:hover {
+		      background:$menu-highlight-background;
+		      & > ul.submenu {
+		      	right:0px;
+		      }
+		    }  
+		  }
+		}
+	}
+}
+
+.signed-in-body {
+	padding-top:$signed-in-bar-height;
+}
+
+

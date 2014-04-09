@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @app_name.humanize %></title>
+  <%%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%%= csrf_meta_tags %>
+</head>
+<body>
+
+  <%%= render "layouts/flash", :flash => flash %>
+  
+  <%% if user_signed_in? %>
+  <%%= render "layouts/signed_in_bar" %>
+    <div class="signed-in-body">
+  <%% end %>
+
+    <%%= yield %>  
+
+  
+  <%% if user_signed_in? %>
+    </div>
+  <%% end %>
+
+</body>
+</html>

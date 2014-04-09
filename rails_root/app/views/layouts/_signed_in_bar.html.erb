@@ -1,0 +1,18 @@
+<div class="signed-in-bar">
+	<div class="container">
+		<div class="signed-in-bar-right">
+			<ul class="signed-in-bar-menu">
+				<li>
+					<%= link_to "#" do %>
+						<%= current_user.email %> 
+					<% end %>
+					<ul class="submenu">
+						<li><%= link_to "Account", edit_user_registration_path %></li>
+						<li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
