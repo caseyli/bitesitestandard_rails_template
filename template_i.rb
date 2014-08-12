@@ -142,7 +142,7 @@ if yes?("Would you like to install Devise?")
   # Routes -----------
   route 'get "/signin" => redirect("/users/sign_in")'
   route 'get "/register" => redirect("/users/sign_up")'
-  route 'get "/signup" => redirect("/users/sign_up")"'
+  route 'get "/signup" => redirect("/users/sign_up")'
 
   # Create Roles ------------------
   if yes?("Would you like to generate Roles as well?")
